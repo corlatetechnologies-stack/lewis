@@ -1,0 +1,55 @@
+/* Global Styles for TSLCparts Coming Soon Page */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000; /* Jet Black */
+    color: #FFFFFF; /* White */
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.button {
+    background-color: #B22222; /* Crimson Red */
+    color: #FFFFFF; /* White */
+    border: none;
+    padding: 15px 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.button:hover {
+    background-color: #8B0000; /* Darker Red */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(178, 34, 34, 0.4);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
