@@ -147,7 +147,7 @@ const ComingSoonBanner = () => {
         },
     };
 
-    // Inject keyframe animations
+    // Inject keyframe animations and media queries
     React.useEffect(() => {
         const style = document.createElement('style');
         style.innerHTML = `
@@ -177,6 +177,55 @@ const ComingSoonBanner = () => {
                 0%, 100% { box-shadow: 0 10px 30px rgba(178, 34, 34, 0.5); }
                 50% { box-shadow: 5px 15px 40px rgba(178, 34, 34, 0.7); }
             }
+            
+            /* Mobile Responsive Styles */
+            @media (max-width: 768px) {
+                .mobile-logo {
+                    font-size: 2.5rem !important;
+                    margin-bottom: 1rem !important;
+                }
+                .mobile-coming-soon {
+                    font-size: 1.5rem !important;
+                    letter-spacing: 0.1em !important;
+                }
+                .mobile-description {
+                    font-size: 1rem !important;
+                    padding: 0 10px !important;
+                }
+                .mobile-subtitle {
+                    font-size: 0.9rem !important;
+                }
+                .mobile-flag-container {
+                    top: 2% !important;
+                    left: 2% !important;
+                    transform: scale(0.6) !important;
+                    transform-origin: left top !important;
+                }
+                .mobile-icon-container {
+                    gap: 1rem !important;
+                }
+                .mobile-icon {
+                    width: 45px !important;
+                    height: 45px !important;
+                    font-size: 1.2rem !important;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .mobile-logo {
+                    font-size: 2rem !important;
+                }
+                .mobile-coming-soon {
+                    font-size: 1.2rem !important;
+                }
+                .mobile-description {
+                    font-size: 0.9rem !important;
+                    margin-bottom: 2rem !important;
+                }
+                .mobile-flag-container {
+                    transform: scale(0.5) !important;
+                }
+            }
         `;
         document.head.appendChild(style);
         return () => document.head.removeChild(style);
@@ -187,7 +236,7 @@ const ComingSoonBanner = () => {
             <div style={styles.backgroundOverlay}></div>
             
             {/* Flag Banner */}
-            <div style={styles.flyingBannerContainer}>
+            <div style={styles.flyingBannerContainer} className="mobile-flag-container">
                 <div style={styles.flagPole}>
                     <div style={styles.flagPoleTop}></div>
                 </div>
@@ -197,22 +246,24 @@ const ComingSoonBanner = () => {
             </div>
 
             <div style={styles.content}>
-                <h1 style={styles.logo}>
+                <h1 style={styles.logo} className="mobile-logo">
                     TSLC<span style={styles.logoAccent}>PARTS</span>
                 </h1>
                 <div style={styles.divider}></div>
-                <h2 style={{ ...styles.comingSoon, animation: 'none' }}>Coming Soon</h2>
-                <p style={styles.description}>
+                <h2 style={{ ...styles.comingSoon, animation: 'none' }} className="mobile-coming-soon">
+                    Coming Soon
+                </h2>
+                <p style={styles.description} className="mobile-description">
                     We're building something exceptional for your automotive needs. 
                     Quality car parts, expert repairs, and reliable service you can trust.
                 </p>
-                <p style={styles.subtitle}>
+                <p style={styles.subtitle} className="mobile-subtitle">
                     Your go-to destination for genuine auto parts and professional car repairs.
                 </p>
-                <div style={styles.iconContainer}>
-                    <div style={styles.icon}>⚙️</div>
-                    <div style={styles.icon}>🔧</div>
-                    <div style={styles.icon}>⚡</div>
+                <div style={styles.iconContainer} className="mobile-icon-container">
+                    <div style={styles.icon} className="mobile-icon">⚙️</div>
+                    <div style={styles.icon} className="mobile-icon">🔧</div>
+                    <div style={styles.icon} className="mobile-icon">⚡</div>
                 </div>
             </div>
         </div>
