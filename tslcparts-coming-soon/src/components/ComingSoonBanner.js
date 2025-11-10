@@ -1,11 +1,10 @@
 import React from 'react';
-import { colors } from '../utils/colors';
 
 const ComingSoonBanner = () => {
     const styles = {
         container: {
             minHeight: '100vh',
-            backgroundColor: colors.jetBlack,
+            backgroundColor: '#1f4e45',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
@@ -14,216 +13,159 @@ const ComingSoonBanner = () => {
             position: 'relative',
             overflow: 'hidden',
         },
-        '@keyframes flyBanner': {
-            '0%': { transform: 'translateX(-100%)' },
-            '100%': { transform: 'translateX(100%)' }
-        },
-        backgroundOverlay: {
+        header: {
             position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: colors.steelGray,
-            opacity: 0.1,
-            backgroundImage: `repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 35px,
-                ${colors.steelGray} 35px,
-                ${colors.steelGray} 70px
-            )`,
+            top: '30px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+        },
+        headerCircle: {
+            width: '40px',
+            height: '40px',
+            backgroundColor: '#FF4E45',
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#ffffff',
+            fontSize: '1.2rem',
+            fontWeight: 'bold',
+        },
+        headerText: {
+            fontSize: '1.2rem',
+            fontWeight: '600',
+            color: '#ffffff',
         },
         content: {
             position: 'relative',
             zIndex: 1,
             textAlign: 'center',
-            maxWidth: '800px',
+            maxWidth: '700px',
         },
-        logo: {
+        emoji: {
             fontSize: '4rem',
-            fontWeight: 'bold',
-            color: colors.white,
-            marginBottom: '2rem',
+            marginBottom: '1rem',
+        },
+        smallText: {
+            fontSize: '0.9rem',
+            fontWeight: '600',
+            color: '#ffffff',
+            marginBottom: '1rem',
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
-            fontFamily: "'Arial Black', sans-serif",
+            opacity: 0.9,
         },
-        logoAccent: {
-            color: colors.crimsonRed,
-        },
-        comingSoon: {
-            fontSize: '2.5rem',
+        mainHeading: {
+            fontSize: '3.5rem',
             fontWeight: 'bold',
-            color: colors.crimsonRed,
+            color: '#ffffff',
             marginBottom: '1.5rem',
-            textTransform: 'uppercase',
-            letterSpacing: '0.2em',
-            animation: 'flyBanner 15s linear infinite',
-            whiteSpace: 'nowrap',
-            position: 'relative',
+            lineHeight: '1.2',
         },
-        flyingBannerContainer: {
+        decorativeEmoji1: {
             position: 'absolute',
-            top: '5%',
-            left: '5%',
-            zIndex: 10,
-            display: 'flex',
-            alignItems: 'center',
+            fontSize: '3rem',
+            left: '15%',
+            top: '40%',
+            opacity: 0.5,
+            filter: 'grayscale(50%)',
         },
-        flagPole: {
-            width: '10px',
-            height: '200px',
-            backgroundColor: colors.silver,
-            marginRight: '-5px',
-            zIndex: 11,
-            position: 'relative',
-            boxShadow: '2px 0 5px rgba(0,0,0,0.3)',
-            animation: 'flagPole 3s ease-in-out infinite',
-        },
-        flagPoleTop: {
-            width: '20px',
-            height: '20px',
-            backgroundColor: colors.crimsonRed,
-            borderRadius: '50%',
+        decorativeEmoji2: {
             position: 'absolute',
-            top: '-10px',
-            left: '-5px',
-            boxShadow: '0 2px 5px rgba(0,0,0,0.3)',
-        },
-        flyingBanner: {
-            fontSize: '2rem',
-            fontWeight: 'bold',
-            color: colors.white,
-            backgroundColor: colors.crimsonRed,
-            padding: '30px 80px 30px 20px',
-            textTransform: 'uppercase',
-            letterSpacing: '0.2em',
-            whiteSpace: 'nowrap',
-            display: 'inline-block',
-            border: `4px solid ${colors.silver}`,
-            borderLeft: 'none',
-            position: 'relative',
-            transformOrigin: 'left center',
-            animation: 'wave 3s ease-in-out infinite, flutter 3s ease-in-out infinite',
-            boxShadow: '0 10px 30px rgba(178, 34, 34, 0.5)',
-            background: `linear-gradient(135deg, ${colors.crimsonRed} 0%, #8B0000 100%)`,
+            fontSize: '3rem',
+            right: '15%',
+            top: '45%',
+            opacity: 0.5,
+            filter: 'grayscale(50%)',
         },
         description: {
-            fontSize: '1.25rem',
-            color: colors.silver,
-            marginBottom: '3rem',
-            lineHeight: '1.8',
-        },
-        divider: {
-            width: '100px',
-            height: '3px',
-            backgroundColor: colors.crimsonRed,
-            margin: '2rem auto',
+            fontSize: '1.1rem',
+            color: '#ffffff',
+            marginBottom: '1rem',
+            lineHeight: '1.6',
+            opacity: 0.85,
         },
         subtitle: {
-            fontSize: '1.1rem',
-            color: colors.steelGray,
-            marginTop: '2rem',
+            fontSize: '1rem',
+            color: '#FF4E45',
+            marginBottom: '3rem',
+            fontWeight: '600',
         },
-        iconContainer: {
+        button: {
+            backgroundColor: '#FF4E45',
+            color: '#ffffff',
+            padding: '15px 40px',
+            fontSize: '1rem',
+            fontWeight: '600',
+            border: 'none',
+            borderRadius: '50px',
+            cursor: 'pointer',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '10px',
+            transition: 'all 0.3s ease',
+            boxShadow: '0 10px 30px rgba(255, 78, 69, 0.3)',
+        },
+        buttonHover: {
+            transform: 'translateY(-2px)',
+            boxShadow: '0 15px 40px rgba(255, 78, 69, 0.5)',
+            backgroundColor: '#ff3d34',
+        },
+        socialContainer: {
+            position: 'absolute',
+            bottom: '40px',
+            left: '50%',
+            transform: 'translateX(-50%)',
             display: 'flex',
-            justifyContent: 'center',
-            gap: '2rem',
-            marginTop: '3rem',
+            gap: '1.5rem',
         },
-        icon: {
-            width: '60px',
-            height: '60px',
+        socialIcon: {
+            width: '40px',
+            height: '40px',
             borderRadius: '50%',
-            backgroundColor: colors.steelGray,
+            backgroundColor: 'rgba(255, 255, 255, 0.1)',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            fontSize: '1.5rem',
-            color: colors.silver,
-            transition: 'all 0.3s ease',
+            color: '#ffffff',
+            fontSize: '1.2rem',
             cursor: 'pointer',
+            transition: 'all 0.3s ease',
+            border: '2px solid rgba(255, 255, 255, 0.2)',
         },
     };
 
-    // Inject keyframe animations and media queries
+    const [isHovered, setIsHovered] = React.useState(false);
+
+    // Inject responsive styles
     React.useEffect(() => {
         const style = document.createElement('style');
         style.innerHTML = `
-            @keyframes wave {
-                0%, 100% { 
-                    transform: perspective(400px) rotateY(0deg);
-                    border-radius: 0px;
-                }
-                25% { 
-                    transform: perspective(400px) rotateY(-15deg);
-                    border-radius: 20px 0px 20px 0px;
-                }
-                50% { 
-                    transform: perspective(400px) rotateY(0deg);
-                    border-radius: 0px 20px 0px 20px;
-                }
-                75% { 
-                    transform: perspective(400px) rotateY(15deg);
-                    border-radius: 20px 0px 20px 0px;
-                }
-            }
-            @keyframes flagPole {
-                0%, 100% { transform: rotate(0deg); }
-                50% { transform: rotate(3deg); }
-            }
-            @keyframes flutter {
-                0%, 100% { box-shadow: 0 10px 30px rgba(178, 34, 34, 0.5); }
-                50% { box-shadow: 5px 15px 40px rgba(178, 34, 34, 0.7); }
-            }
-            
-            /* Mobile Responsive Styles */
             @media (max-width: 768px) {
-                .mobile-logo {
+                .main-heading {
                     font-size: 2.5rem !important;
-                    margin-bottom: 1rem !important;
                 }
-                .mobile-coming-soon {
-                    font-size: 1.5rem !important;
-                    letter-spacing: 0.1em !important;
-                }
-                .mobile-description {
+                .description-text {
                     font-size: 1rem !important;
-                    padding: 0 10px !important;
                 }
-                .mobile-subtitle {
-                    font-size: 0.9rem !important;
-                }
-                .mobile-flag-container {
-                    top: 2% !important;
-                    left: 2% !important;
-                    transform: scale(0.6) !important;
-                    transform-origin: left top !important;
-                }
-                .mobile-icon-container {
-                    gap: 1rem !important;
-                }
-                .mobile-icon {
-                    width: 45px !important;
-                    height: 45px !important;
-                    font-size: 1.2rem !important;
+                .decorative-emoji {
+                    display: none !important;
                 }
             }
             
             @media (max-width: 480px) {
-                .mobile-logo {
+                .main-heading {
                     font-size: 2rem !important;
                 }
-                .mobile-coming-soon {
-                    font-size: 1.2rem !important;
+                .header-text {
+                    font-size: 1rem !important;
                 }
-                .mobile-description {
+                .notify-button {
+                    padding: 12px 30px !important;
                     font-size: 0.9rem !important;
-                    margin-bottom: 2rem !important;
-                }
-                .mobile-flag-container {
-                    transform: scale(0.5) !important;
                 }
             }
         `;
@@ -233,38 +175,48 @@ const ComingSoonBanner = () => {
 
     return (
         <div style={styles.container}>
-            <div style={styles.backgroundOverlay}></div>
-            
-            {/* Flag Banner */}
-            <div style={styles.flyingBannerContainer} className="mobile-flag-container">
-                <div style={styles.flagPole}>
-                    <div style={styles.flagPoleTop}></div>
-                </div>
-                <div style={styles.flyingBanner}>
-                    🚗 COMING SOON • TSLCPARTS 🔧
-                </div>
+            {/* Header Logo */}
+            <div style={styles.header}>
+                <div style={styles.headerCircle}>C</div>
+                <span style={styles.headerText} className="header-text">Corlate Technologies</span>
             </div>
 
+            {/* Decorative Emojis */}
+            <div style={styles.decorativeEmoji1} className="decorative-emoji">⚙️</div>
+            <div style={styles.decorativeEmoji2} className="decorative-emoji">🔧</div>
+
+            {/* Main Content */}
             <div style={styles.content}>
-                <h1 style={styles.logo} className="mobile-logo">
-                    TSLC<span style={styles.logoAccent}>PARTS</span>
+                <div style={styles.emoji}>🤝</div>
+                <p style={styles.smallText}>WE'RE BUSY</p>
+                <h1 style={styles.mainHeading} className="main-heading">
+                    Brewing TSL Commercial Parts Website.
                 </h1>
-                <div style={styles.divider}></div>
-                <h2 style={{ ...styles.comingSoon, animation: 'none' }} className="mobile-coming-soon">
-                    Coming Soon
-                </h2>
-                <p style={styles.description} className="mobile-description">
-                    We're building something exceptional for your automotive needs. 
-                    Quality car parts, expert repairs, and reliable service you can trust.
+                <p style={styles.description} className="description-text">
+                    We are going to launch our website Very Soon.
                 </p>
-                <p style={styles.subtitle} className="mobile-subtitle">
-                    Your go-to destination for genuine auto parts and professional car repairs.
-                </p>
-                <div style={styles.iconContainer} className="mobile-icon-container">
-                    <div style={styles.icon} className="mobile-icon">⚙️</div>
-                    <div style={styles.icon} className="mobile-icon">🔧</div>
-                    <div style={styles.icon} className="mobile-icon">⚡</div>
-                </div>
+                <p style={styles.subtitle}>Coming Soon.</p>
+                
+                <button 
+                    style={{
+                        ...styles.button,
+                        ...(isHovered ? styles.buttonHover : {})
+                    }}
+                    className="notify-button"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                >
+                    <span>🏢</span>
+                    Corlate Technologies
+                    <span>→</span>
+                </button>
+            </div>
+
+            {/* Social Media Icons */}
+            <div style={styles.socialContainer}>
+                <div style={styles.socialIcon}>🌐</div>
+                <div style={styles.socialIcon}>�</div>
+                <div style={styles.socialIcon}>💼</div>
             </div>
         </div>
     );
