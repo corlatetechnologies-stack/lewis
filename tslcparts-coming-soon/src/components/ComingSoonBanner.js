@@ -4,7 +4,7 @@ const ComingSoonBanner = () => {
     const styles = {
         container: {
             minHeight: '100vh',
-            backgroundColor: '#1f4e45',
+            backgroundColor: '#ffffff',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
@@ -16,28 +16,13 @@ const ComingSoonBanner = () => {
         header: {
             position: 'absolute',
             top: '30px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '10px',
+            left: '40px',
+            zIndex: 10,
         },
-        headerCircle: {
-            width: '40px',
-            height: '40px',
-            backgroundColor: '#FF4E45',
-            borderRadius: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#ffffff',
-            fontSize: '1.2rem',
-            fontWeight: 'bold',
-        },
-        headerText: {
-            fontSize: '1.2rem',
-            fontWeight: '600',
-            color: '#ffffff',
+        headerLogo: {
+            height: '180px',
+            width: 'auto',
+            objectFit: 'contain',
         },
         content: {
             position: 'relative',
@@ -50,47 +35,45 @@ const ComingSoonBanner = () => {
             marginBottom: '1rem',
         },
         smallText: {
-            fontSize: '0.9rem',
-            fontWeight: '600',
-            color: '#ffffff',
+            fontSize: '1.2rem',
+            fontWeight: '500',
+            color: '#1f4e45',
             marginBottom: '1rem',
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
-            opacity: 0.9,
+            opacity: 0.7,
         },
         mainHeading: {
-            fontSize: '3.5rem',
-            fontWeight: 'bold',
-            color: '#ffffff',
+            fontSize: '4.5rem',
+            fontWeight: '900',
+            color: '#1f4e45',
             marginBottom: '1.5rem',
             lineHeight: '1.2',
         },
         decorativeEmoji1: {
             position: 'absolute',
-            fontSize: '3rem',
+            fontSize: '4rem',
             left: '15%',
             top: '40%',
-            opacity: 0.5,
-            filter: 'grayscale(50%)',
+            opacity: 0.3,
         },
         decorativeEmoji2: {
             position: 'absolute',
-            fontSize: '3rem',
+            fontSize: '4rem',
             right: '15%',
             top: '45%',
-            opacity: 0.5,
-            filter: 'grayscale(50%)',
+            opacity: 0.3,
         },
         description: {
             fontSize: '1.1rem',
-            color: '#ffffff',
+            color: '#1f4e45',
             marginBottom: '1rem',
             lineHeight: '1.6',
-            opacity: 0.85,
+            opacity: 0.7,
         },
         subtitle: {
             fontSize: '1rem',
-            color: '#FF4E45',
+            color: '#1f4e45',
             marginBottom: '3rem',
             fontWeight: '600',
         },
@@ -126,15 +109,15 @@ const ComingSoonBanner = () => {
             width: '40px',
             height: '40px',
             borderRadius: '50%',
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            backgroundColor: '#f5f5f5',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            color: '#ffffff',
+            color: '#1f4e45',
             fontSize: '1.2rem',
             cursor: 'pointer',
             transition: 'all 0.3s ease',
-            border: '2px solid rgba(255, 255, 255, 0.2)',
+            border: '2px solid #e5e5e5',
         },
     };
 
@@ -177,24 +160,22 @@ const ComingSoonBanner = () => {
         <div style={styles.container}>
             {/* Header Logo */}
             <div style={styles.header}>
-                <div style={styles.headerCircle}>C</div>
-                <span style={styles.headerText} className="header-text">Corlate Technologies</span>
+                <img 
+                    src="/images/corlate-logo.jpeg" 
+                    alt="Corlate Technologies" 
+                    style={styles.headerLogo}
+                />
             </div>
 
-            {/* Decorative Emojis */}
-            <div style={styles.decorativeEmoji1} className="decorative-emoji">⚙️</div>
-            <div style={styles.decorativeEmoji2} className="decorative-emoji">🔧</div>
+            {/* Decorative Icons */}
+            <div style={{...styles.decorativeEmoji1, color: '#1f4e45'}} className="decorative-emoji">⚙️</div>
+            <div style={{...styles.decorativeEmoji2, color: '#1f4e45'}} className="decorative-emoji">🔧</div>
 
             {/* Main Content */}
             <div style={styles.content}>
                 <div style={styles.emoji}>🤝</div>
-                <p style={styles.smallText}>WE'RE BUSY</p>
-                <h1 style={styles.mainHeading} className="main-heading">
-                    Brewing TSL Commercial Parts Website.
-                </h1>
-                <p style={styles.description} className="description-text">
-                    We are going to launch our website Very Soon.
-                </p>
+                <p style={styles.smallText} className="header-text">WE'RE BUSY</p>
+                <h1 style={styles.mainHeading} className="main-heading">Brewing TSL Commercial Parts Website.</h1>
                 <p style={styles.subtitle}>Coming Soon.</p>
                 
                 <button 
